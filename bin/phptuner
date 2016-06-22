@@ -20,10 +20,10 @@ foreach ($lines as $line){
        $skip_flag = true;
        $in_php_flag = true;
     }
-    if ($line == '?>'){
-       $in_php_flag = false;
-    }
+
+    if ($line == '?>') $in_php_flag = false;
     if (!$line) $skip_flag = true;
+
     if ($skip_flag or !$in_php_flag){
         echo $line, "\n";
         continue;
